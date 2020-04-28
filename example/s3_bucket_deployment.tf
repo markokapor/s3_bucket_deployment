@@ -1,6 +1,6 @@
 ## Terrafom S3 bucket deployment module
 module "s3_bucket_deployment" {
-    source      = "../../terraform-s3-deployment"
+    source      = "../"
 
     name        = "my-test-bucket.some.example.domain.com"
     region      = "eu-west-1"
