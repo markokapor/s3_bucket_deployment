@@ -2,7 +2,7 @@ provider "aws" {
     region = var.region
 
     dynamic "assume_role" {
-        for_each = length(keys(var.assume_role)) == 0 ? [] : [var.versioning]
+        for_each = length(keys(var.assume_role)) == 0 ? [] : [var.assume_role]
 
         content {
             role_arn = var.assume_role.assumerole_arn
