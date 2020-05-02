@@ -46,12 +46,8 @@ variable "iamuser" {
     default = false
 }
 
-###  2. pitanje u zadatku?
-# variable "assume_role" {
-#     description = "Used to run module under different AWS role/policy"
-#     type = map(string)
-#     default = {
-#         assumerole_arn = ""
-#         assumerole_session_name = ""
-#         assumerole_external_id = ""
-# }
+variable "assume_role" {
+    description = "Used to run module under different user using AWS assume role"
+    type = map(string)
+    default = {}
+}

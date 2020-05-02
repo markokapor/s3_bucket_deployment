@@ -1,12 +1,15 @@
 provider "aws" {
     region = var.region
 
-###  2. pitanje u zadatku?
-#    assume_role {
-#        role_arn = var.assume_role.assumerole_arn
-#        session_name = var.assume_role.assumerole_session_name
-#        external_id = var.assume_role.assumerole_external_id
-#    }
+    dynamic "assume_role" {
+        for_each = length(keys(var.assume_role)) == 0 ? [] : [var.versioning]
+
+        content {
+            role_arn = var.assume_role.assumerole_arn
+            session_name = var.assume_role.assumerole_session_name
+            external_id = var.assume_role.assumerole_external_id
+        }
+    }
 }
 
 resource "aws_s3_bucket" "bucket" {

@@ -21,9 +21,6 @@ module "s3_bucket_deployment" {
 #   encryption  = { key_duration = 10
 #                 }
 #   iamuser     = true
-#
-#
-###  2. pitanje u zadatku?
 #   assume_role = { assumerole_arn = "arn:aws:iam::my-role-arn"
 #                   assumerole_session_name = "my-session-name"
 #                   assumerole_external_id = "my-external-id"   
